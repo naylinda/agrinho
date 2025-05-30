@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Água na Agricultura 
+    A base da vida e da produção de alimentos no campo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Fonte e fundo */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    header {
+      background: none;
+      color: #0ea5e9;
+      padding: 1rem 0;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    h1::before {
+      content: "";
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/728/728093.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    main {
+      padding: 3rem 0;
+    }
+
+    /* Fundo branco semi-transparente mais forte */
+    .content {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border: none;
+      padding: 2rem;
+      color: #222;
+    }
+
+    button {
+      margin-top: 1rem;
+      background-color: #0eb6e9;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #02a0c7;
+    }
+
+    footer {
+      background-color: transparent;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+      color: #e0f7fa;
+      text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.8);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    footer nav a {
+      color: #38bdf8;
+      text-decoration: none;
+      margin-left: 0.5rem;
+      font-weight: 800;
+      transition: color 0.3s ease;
+    }
+
+    footer nav a:hover {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+
+    .galeria {
+      margin-top: 3rem;
+      margin-bottom: 3rem; /* margem inferior adicionada */
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .galeria-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .galeria-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      flex: 1;
+      min-width: 200px;
+      background: #e0f7fa;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .depoimentos {
+      margin-top: 3rem;
+      background: #f0fdf4;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .depoimentos blockquote {
+      font-style: italic;
+      margin-bottom: 1rem;
+      border-left: 4px solid #51e989;
+      padding-left: 1rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    p, li, button, cite {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0ea5e9;
+      margin-top: 2.5rem;
+      position: relative;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #0ea5e9;
+      margin-top: 0.5rem;
+      border-radius: 2px;
+    }
+
+    .video-agricultura {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .video-agricultura h2 {
+      color: #0ea5e9;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .video-agricultura video {
+      width: 100%;
+      max-width: 640px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      outline: none;
+    }
+
+    /* Espaço entre Dados Importantes e Desafios */
+    .curiosidades {
+      margin-bottom: 3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Água na Agricultura</h1>
+  </header>
+  <main class="container">
+    <section class="content">
+      <section class="essencial content">
+        <h2>Por que a água é essencial?</h2>
+        <p>
+          A água é um recurso essencial para a agricultura, sendo fundamental para a irrigação das
+          plantações, a manutenção do gado e a realização de diversas atividades agrícolas. Sem água 
+          em quantidade e qualidade adequadas, a produtividade das lavouras é severamente comprometida, afetando a segurança alimentar e a economia. Além disso, a agricultura representa uma das maiores demandas de água doce no mundo, o que torna a gestão eficiente desse recurso uma prioridade. A adoção de práticas sustentáveis, como a irrigação por gotejamento, a captação de água da chuva e o manejo integrado de pragas, é crucial para garantir
+          a disponibilidade de água no futuro e minimizar os impactos ambientais negativos.
+        </p>
+      </section>
+
+      <div class="imagens-lado-a-lado">
+        <img src="img/agri.jpg" alt="Água sendo usada na irrigação agrícola" />
+      </div>
+
+      <section class="consequencias content">
+        <h2>iportancia da Água na produção de alimentos</h2>
+        
+        <ul>
+          <li>Segurança Alimentar: A água é essencial para a produção de alimentos, 
+            e a falta de água pode levar a perdas significativas na produção agrícola.</li>
+          <li>Qualidade dos Alimentos: A água de boa qualidade é fundamental para a produção de alimentos seguros e saudáveis.</li>
+          <li>Diversidade de Culturas: A água permite a cultivo de uma variedade de culturas, incluindo frutas, legumes e grãos.</li>
+        </ul>
+      </section>
+
+      <button onclick="mostrarCuriosidade()">Ver Curiosidade</button>
+      <p id="curiosidade" class="hidden"></p>
+
+      <!-- Gráfico de uso de água -->
+      <h2>Uso de Água na Agricultura Mundial</h2>
+      <canvas id="graficoUsoAgua" width="400" height="200"></canvas>
+      <!-- Script do Chart.js e gráfico -->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script>
+        const ctx = document.getElementById('graficoUsoAgua').getContext('2d');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Agricultura', 'Indústria', 'Doméstico'],
+            datasets: [{
+              label: 'Uso da Água (%)',
+              data: [70, 20, 10],
+              backgroundColor: ['rgba(145, 232, 253, 0.85)', 'rgba(252, 245, 153, 0.85)', '#4ff18a']
+            }]
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              legend: { display: false },
+              title: {
+                display: true,
+                text: 'Distribuição Global do Uso da Água',
+                font: { size: 18 }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100,
+                ticks: {
+                  callback: value => value + '%'
+                }
+              }
+            }
+          }
+        });
+
+        function mostrarCuriosidade() {
+          const curiosidade = document.getElementById('curiosidade');
+          curiosidade.textContent = 'A irrigação por gotejamento pode economizar até 50% da água usada na agricultura!';
+          curiosidade.classList.remove('hidden');
+        }
+      </script>
+
+      <section class="galeria">
+        <h2>Imagens da Água na Agricultura</h2>
+        <div class="galeria-grid">
+          <img src="img/irrigacao.jpg" alt="Irrigação no campo" />
+          <img src="img/plantacao.jpg" alt="Plantação verdejante" />
+          <img src="img/trator.jpeg" alt="Trator irrigando" />
+        </div>
+      </section>
+
+      <section class="content">
+        <h2>Funções da Água na Agricultura</h2>
+        <ul>
+          <li>
+            <h3>Crescimento das Plantas</h3>
+            <p>A água é necessária para o crescimento e desenvolvimento das plantas, pois ajuda a transportar 
+              nutrientes e minerais do solo para as plantas.</p>
+            <h3>Fotossíntese</h3>
+            <p>A água é um componente essencial da fotossíntese, o processo pelo qual as plantas produzem energia a partir da luz solar.</p>
+            <h3>Regulação da Temperatura</h3>
+            <p>A água ajuda a regular a temperatura das plantas, prevenindo danos causados por temperaturas extremas.</p>
+            <h3>Manutenção da Estrutura do Solo</h3>
+            <p>A água ajuda a manter a estrutura do solo, prevenindo a erosão e a perda de nutrientes.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="curiosidades">
+        <h2>Dados Importantes</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>70% da água</h3>
+            <p>É usada na agricultura mundialmente.</p>
+          </div>
+          <div class="card">
+            <h3>Eficiência</h3>
+            <p>Irrigação por gotejamento economiza até 50% de água.</p>
+          </div>
+          <div class="card">
+            <h3>Brasil</h3>
+            <p>É um dos 5 maiores usuários de água para agricultura.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content" style="margin-bottom: 3rem;">
+        <h2>Desafios da Água na Agricultura</h2>
+        <ul>
+          <li>Escassez de Água: A escassez de água é um problema crescente em muitas regiões do mundo, afetando a produção agrícola e a segurança alimentar.</li>
+          <li>Uso Ineficiente da Água: O uso ineficiente da água na agricultura pode levar a perdas significativas de água e afetar a produtividade das culturas.</li>
+          <li>Mudanças Climáticas: As mudanças climáticas podem afetar a disponibilidade de água para a agricultura, levando a desafios adicionais para os agricultores.</li>
+        </ul>
+      </section>
+
+      <section class="content">
+        <h2>Soluções para a Gestão da Água na Agricultura</h2>
+        <ul>
+          <li><strong>Práticas Agrícolas Sustentáveis:</strong> agricultura de conservação, agrofloresta e agricultura orgânica.</li>
+          <li><strong>Tecnologias Inovadoras:</strong>  irrigação eficiente, agricultura de precisão e biotecnologia.</li>
+          <li><strong>Gestão da Água: </strong>captação de água da chuva, reutilização de água e gestão de bacias hidrográficas.</li>
+          <li><strong>Conservação do Solo:</strong>  rotação de culturas, cobertura do solo e controle de erosão.</li>
+          <li><strong>Adaptação às Mudanças Climáticas:</strong> desenvolvimento de culturas resilientes, práticas de manejo de risco e seguro agrícola.</li>
+          <li><strong>Fortalecimento da Capacidade dos Agricultores:</strong> agricultura de conservação, agrofloresta e agricultura orgânica.</li>
+        </ul>
+      </section>
+
+      <section class="depoimentos">
+        <h2>O que dizem os agricultores</h2>
+        <blockquote>“Sem água não há vida no campo. A irrigação salvou minha plantação.”
+          <cite>– João, agricultor em MG</cite>
+        </blockquote>
+        <blockquote>“Com uso consciente da água, garantimos colheitas sustentáveis.”
+          <cite>– Maria, produtora orgânica</cite>
+        </
